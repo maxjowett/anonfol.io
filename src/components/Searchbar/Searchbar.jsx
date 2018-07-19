@@ -5,8 +5,8 @@ class Searchbar extends Component {
   render() {
     return (
       <div className="searchbar">
-        <form>
-          <input type="text" value={this.props.query} onChange={this.props.handleOnChange}/>
+        <form onSubmit={this.props.handleSubmit}>
+          <input type="text" value={this.props.query} onChange={this.props.handleChange}/>
           <input type="submit" />
         </form>
       </div>
