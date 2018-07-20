@@ -11,9 +11,12 @@ class App extends Component {
       query: '',
       listings: null,
       id: '',
+      coin: null
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getMarket = this.getMarket.bind(this);
+    this.getId = this.getId.bind(this);
   }
 
   handleChange(event) {
@@ -24,24 +27,44 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.getMarket();
+  };
+
+  getMarket() {
     let that = this;
-    let query = this.state.query.toUpperCase();
-    fetch(`https://api.coinmarketcap.com/v2/listings/`)
+    fetch('https://api.coinmarketcap.com/v2/listings/')
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
       that.setState({
         listings: data
-      });
+      }, () => { that.getId() });
     })
-    .then(function(listings) {
-      for (let i = 0; i < that.state.listings.data.length; i++) {
-        if (that.state.listings.data[i].symbol == query) {
-          let id = that.state.listings.data[i].id
-          that.setState({ id });
-        }
+  };
+
+  getId() {
+    let that = this;
+    let query = that.state.query.toUpperCase();
+    for (let i = 0; i < that.state.listings.data.length; i++) {
+      if (that.state.listings.data[i].symbol == query) {
+        that.setState({
+          id: that.state.listings.data[i].id
+        }, () => { this.getCoin() });
       }
+    }
+  };
+
+  getCoin() {
+    let that = this;
+    fetch(`https://cors-anywhere.herokuapp.com/http://api.coinmarketcap.com/v2/ticker/${this.state.id}`)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      that.setState({
+        coin: data.data
+      });
     })
   };
 
