@@ -22,7 +22,8 @@ class App extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.fetchData(this.state.query)
+    this.fetchData(this.state.query);
+    event.target.reset();
   }
 
   fetchData(str) {
