@@ -48,9 +48,12 @@ class App extends Component {
           handleOnChange={this.handleOnChange}
           handleOnSubmit={this.handleOnSubmit}
         />
-        <CoinDetails
-          data={this.state.data}
-        />
+        { this.state.data !== null
+        ? <CoinDetails
+            data={this.state.data}
+          />
+        : null
+        }
       </div>
     );
   }
