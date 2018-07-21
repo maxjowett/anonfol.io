@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+// import './assets/css/normalize.css';
+import './assets/css/skeleton.css';
 import './App.css';
 import LandingPage from './components/LandingPage/LandingPage';
 import SearchBar from './components/SearchBar/SearchBar';
+import CoinDetails from './components/CoinDetails/CoinDetails';
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +36,7 @@ class App extends Component {
       return response.json()
     })
     .then(function(data) {
-      that.setState({ data });
+      that.setState({ data: data[0] });
     })
   };
 
@@ -44,6 +47,9 @@ class App extends Component {
         <SearchBar
           handleOnChange={this.handleOnChange}
           handleOnSubmit={this.handleOnSubmit}
+        />
+        <CoinDetails
+          data={this.state.data}
         />
       </div>
     );
