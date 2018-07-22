@@ -12,12 +12,24 @@ class App extends Component {
     this.state = {
       isLandingPageVisible: false,
       query: '',
-      data: null
+      data: null,
+      top10: null
     };
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.fetchData = this.fetchData.bind(this);
   }
+
+  componentWillMount() {
+    let that = this;
+    fetch('https://api.coinranking.com/v1/public/coins?limit=10')
+    .then(function(response) {
+      return response.json()
+    })
+    .then(function(data) {
+      that.setState({ top10: data.data.coins })
+    })
+  };
 
   handleOnChange(event) {
     this.setState({ query: event.target.value });

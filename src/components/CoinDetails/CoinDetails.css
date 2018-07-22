@@ -4,6 +4,10 @@
   justify-content: center
 }
 
+#coin-details__coin-icon {
+  vertical-align: middle
+}
+
 #coin-details__coin-name {
-  margin-bottom: none !important
+  margin-bottom: 0 !important
 }

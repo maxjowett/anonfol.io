@@ -10,9 +10,9 @@ class CoinDetails extends Component {
     return (
       <div className="container">
         <div className="row">
-        <div className="coin-details">
+          <div className="coin-details">
             <div className="one column">
-              <img src={this.props.data.data.coins[0].iconUrl} width="32"></img>
+              <img id="coin-details__coin-icon" src={this.props.data.data.coins[0].iconUrl} width="32"></img>
             </div>
             <div className="three columns">
               <h4 id="coin-details__coin-name">{this.props.data.data.coins[0].name}</h4>
@@ -26,9 +26,9 @@ class CoinDetails extends Component {
             <div className="three columns">
               {this.props.data.data.coins[0].marketCap}
             </div>
-            </div>
           </div>
         </div>
+      </div>
     );
   }
 }
