@@ -1,0 +1,9 @@
+.coin-details {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#coin-details__coin-name {
+  margin-bottom: none !important
+}
