@@ -31,18 +31,19 @@ class App extends Component {
 
   fetchData(str) {
     let that = this;
-    fetch(`https://api.coinmarketcap.com/v1/ticker/${str}/`)
+    fetch(`https://api.coinranking.com/v1/public/coins?symbols=${str}`)
     .then(function(response) {
       return response.json()
     })
     .then(function(data) {
-      that.setState({ data: data[0] });
+      that.setState({ data });
     })
   };
 
+
   render() {
     return (
-      <div className="App">
+      <div className="App" >
         { this.state.isLandingPageVisible ? <LandingPage /> : null }
         <SearchBar
           handleOnChange={this.handleOnChange}

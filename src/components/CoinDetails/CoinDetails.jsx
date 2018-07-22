@@ -11,12 +11,12 @@ class CoinDetails extends Component {
         <div className="row">
           <div className="twelve columns">
             <div className="coin-details">
-              <h2>{this.props.data.name}</h2>
-              <p>{this.props.data.symbol}</p>
-              <p>{this.props.data.price_usd}</p>
-              <p>{this.props.data.percent_change_1h}</p>
-              <p>{this.props.data.percent_change_24h}</p>
-              <p>{this.props.data.percent_change_7d}</p>
+              <img src={this.props.data.data.coins[0].iconUrl} width="64"></img>
+              <h2>{this.props.data.data.coins[0].name}</h2>
+              <p>{this.props.data.data.coins[0].symbol}</p>
+              <p>{this.props.data.data.coins[0].price}</p>
+              <p>{this.props.data.data.coins[0].rank}</p>
+              <p>{this.props.data.data.coins[0].marketCap}</p>
             </div>
           </div>
         </div>
