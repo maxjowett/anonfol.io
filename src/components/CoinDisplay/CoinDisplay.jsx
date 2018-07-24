@@ -1,15 +1,8 @@
 import React from 'react';
 
-
-const numberWithCommas = (x) => {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-
 const CoinDisplay = (props) => {
   return (
-    props.queryObject != null
-    ?
+    props.queryObject != null &&
     <div className="g-row">
       <div className="coin-display">
         <h2>{props.queryObject.name}</h2>
@@ -22,7 +15,6 @@ const CoinDisplay = (props) => {
         <div>{props.queryObject.change}</div>
       </div>
     </div>
-    : null
   );
 }
 

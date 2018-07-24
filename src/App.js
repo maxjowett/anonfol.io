@@ -39,9 +39,6 @@ class App extends Component {
       if (that.state.queryResponse.status == 'success' && that.state.queryResponse.data.coins.length > 0) {
         that.setState({ queryObject: that.state.queryResponse.data.coins[0] })
       }
-      if (that.state.queryResponse.status == 'fail' || that.state.queryResponse.status == 'error') {
-        console.log('Oh no!')
-      }
     })
   };
 
