@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       query: '',
-      queryResponse: null
+      queryResponse: null,
+      queryObject: null
     };
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
@@ -33,6 +34,14 @@ class App extends Component {
     .then(function(data) {
       that.setState({ queryResponse: data });
     })
+    .then(function() {
+      if (that.state.queryResponse.status == 'success' && that.state.queryResponse.data.coins.length > 0) {
+        that.setState({ queryObject: that.state.queryResponse.data.coins[0] })
+      }
+      if (that.state.queryResponse.status == 'fail' || that.state.queryResponse.status == 'error') {
+        console.log('Oh no!')
+      }
+    })
   };
 
   render() {
@@ -43,7 +52,7 @@ class App extends Component {
           handleOnSubmit={this.handleOnSubmit}
         />
         <CoinDisplay
-          queryResponse={this.state.queryResponse}
+          queryObject={this.state.queryObject}
         />
       </div>
     );

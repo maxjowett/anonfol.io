@@ -8,18 +8,18 @@ const numberWithCommas = (x) => {
 
 const CoinDisplay = (props) => {
   return (
-    props.queryResponse != null
+    props.queryObject != null
     ?
     <div className="g-row">
       <div className="coin-display">
-        <h2>{props.queryResponse.data.coins[0].name}</h2>
-        <div>{props.queryResponse.data.coins[0].symbol}</div>
-        <div>{props.queryResponse.data.coins[0].price.toLocaleString()}</div>
-        <div>{props.queryResponse.data.coins[0].marketCap.toLocaleString()}</div>
-        <div>{props.queryResponse.data.coins[0].circulatingSupply.toLocaleString()}</div>
-        <div>{props.queryResponse.data.coins[0].totalSupply.toLocaleString()}</div>
-        <div>{props.queryResponse.data.coins[0].description}</div>
-        <div>{props.queryResponse.data.coins[0].change}</div>
+        <h2>{props.queryObject.name}</h2>
+        <div>{props.queryObject.symbol}</div>
+        <div>{props.queryObject.price.toLocaleString()}</div>
+        <div>{props.queryObject.marketCap.toLocaleString()}</div>
+        <div>{props.queryObject.circulatingSupply.toLocaleString()}</div>
+        <div>{props.queryObject.totalSupply.toLocaleString()}</div>
+        <div>{props.queryObject.description}</div>
+        <div>{props.queryObject.change}</div>
       </div>
     </div>
     : null
