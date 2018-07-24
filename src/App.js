@@ -23,6 +23,7 @@ class App extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     this.fetchCoinData(this.state.query);
+    event.target.reset();
   };
 
   fetchCoinData(str) {
