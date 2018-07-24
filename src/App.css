@@ -1,3 +1,8 @@
 .App {
-  font-family: 'aktiv-grotesk'
+  font-family: 'aktiv-grotesk', sans-serif;
+}
+
+.g-row {
+  margin: 0 auto;
+  max-width: 960px;
 }
