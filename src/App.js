@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar';
+import CoinDisplay from './components/CoinDisplay/CoinDisplay';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       query: '',
-      queryResult: null
+      queryResponse: null
     };
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
@@ -30,7 +31,7 @@ class App extends Component {
       return response.json();
     })
     .then(function(data) {
-      that.setState({ queryResult: data });
+      that.setState({ queryResponse: data });
     })
   };
 
@@ -40,6 +41,9 @@ class App extends Component {
         <SearchBar
           handleOnChange={this.handleOnChange}
           handleOnSubmit={this.handleOnSubmit}
+        />
+        <CoinDisplay
+          queryResponse={this.state.queryResponse}
         />
       </div>
     );
