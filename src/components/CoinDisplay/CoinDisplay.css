@@ -1,0 +1,12 @@
+.coin-display {
+  max-width: 768px;
+  border: 1px solid black
+}
+
+.coin-display__name {
+  float: left;
+}
+
+.coin-display__price {
+  float: right;
+}
