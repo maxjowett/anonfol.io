@@ -10,3 +10,22 @@
 .coin-display__price {
   float: right;
 }
+
+.coin-display__symbol {
+  float: left;
+}
+
+.coin-display__change {
+  float: right;
+}
+
+.coin-display__rank {
+  float: left;
+}
+
+.coin-display__marketCap {
+}
+
+.coin-display__volume {
+  float: right;
+}
