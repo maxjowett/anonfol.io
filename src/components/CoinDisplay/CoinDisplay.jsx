@@ -19,18 +19,35 @@ const formatChange = (str) => {
 const CoinDisplay = (props) => {
   return (
     props.queryObject != null &&
-      <div className="coin-display">
-        <img src={props.queryObject.iconUrl} width="64"></img>
-        <div className="coin-display__name">{props.queryObject.name}</div>
-        <div className="coin-display__price">{formatPrice(props.queryObject.price)}</div>
-        <div className="coin-display__symbol">{formatSymbol(props.queryObject.symbol)}</div>
-        <div className="coin-display__change">{formatChange(props.queryObject.change)}</div>
-        <div className="coin-display__rank">{props.queryObject.rank}</div>
-        <div className="coin-display__marketCap">{props.queryObject.marketCap}</div>
-        <div className="coin-display__volume">{props.queryObject.volume}</div>
-        <div className="coin-display__circulatingSupply">{props.queryObject.circulatingSupply}</div>
-        <div className="coin-display__totalSupply">{props.queryObject.totalSupply}</div>
-        <div className="coin-display__description">{props.queryObject.description}</div>
+      <div className="g-row">
+        <div className="coin-display">
+          <div className="row" id="row1">
+            <div className="coin-display__icon">
+              <img src={props.queryObject.iconUrl} width="64" height="64" />
+            </div>
+            <div className="row" id="row1__1">
+              <div className="coin-display__name">{props.queryObject.name}</div>
+              <div className="coin-display__price">{formatPrice(props.queryObject.price)}</div>
+              <div className="coin-display__symbol">{formatSymbol(props.queryObject.symbol)}</div>
+              <div className="coin-display__change">{formatChange(props.queryObject.change)}</div>
+            </div>
+          </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="coin-display__rank">{props.queryObject.rank}</div>
+            <div className="coin-display__market-cap">{props.queryObject.marketCap}</div>
+            <div className="coin-display__volume">{props.queryObject.volume}</div>
+            <div className="coin-display__circulating-supply">{props.queryObject.circulatingSupply}</div>
+            <div className="coin-display__total-supply">{props.queryObject.totalSupply}</div>
+            <div className="coin-display__description">{props.queryObject.description}</div>
+        </div>
       </div>
   );
 }

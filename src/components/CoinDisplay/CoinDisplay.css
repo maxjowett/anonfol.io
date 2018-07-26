@@ -1,0 +1,33 @@
+.coin-display {
+  display: grid;
+  padding-top: 20px;
+}
+
+/* TODO: better way to manipulate column values with fr unit? */
+#row1 {
+  display: inline-grid;
+  grid-template-columns: .1fr 1fr
+}
+
+#row1__1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.coin-display__name {
+  font-size: 32px;
+}
+
+.coin-display__price {
+  font-size: 32px;
+  justify-self: right;
+}
+
+.coin-display__symbol {
+  font-size: 16px;
+}
+
+.coin-display__change {
+  justify-self: right;
+  font-size: 16px;
+}
