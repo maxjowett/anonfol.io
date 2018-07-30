@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar';
 import CoinDisplay from './components/CoinDisplay/CoinDisplay';
+import ProgressBar from './components/ProgressBar/ProgressBar';
 
 class App extends Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class App extends Component {
         <CoinDisplay
           queryObject={this.state.queryObject}
         />
+        <ProgressBar />
       </div>
     );
   }
