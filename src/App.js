@@ -53,7 +53,6 @@ class App extends Component {
         <CoinDisplay
           queryObject={this.state.queryObject}
         />
-        <ProgressBar />
       </div>
     );
   }

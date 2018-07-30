@@ -1,5 +1,6 @@
 import React from 'react';
 import './CoinDisplay.css';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 const formatPrice = (str) => {
   let value = '$' + parseFloat(str).toFixed(2);
@@ -37,6 +38,9 @@ const CoinDisplay = (props) => {
               <div className="coin-display__change">{formatChange(props.queryObject.change)}</div>
             </div>
           </div>
+          <ProgressBar
+            queryObject={props.queryObject}
+          />
             <br />
             <br />
             <br />
