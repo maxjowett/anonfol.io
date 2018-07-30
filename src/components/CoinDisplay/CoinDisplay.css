@@ -17,6 +17,13 @@
   grid-template-columns: 1fr 1fr;
 }
 
+#row2 {
+  display: inline-block;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  justify-content: space-around;
+
+}
+
 .coin-display__name {
   font-size: 32px;
   align-self: center;

@@ -35,9 +35,11 @@ const CoinDisplay = (props) => {
             <br />
             <br />
             <br />
-            <div className="coin-display__rank">{props.queryObject.rank}</div>
-            <div className="coin-display__market-cap">{props.queryObject.marketCap}</div>
-            <div className="coin-display__volume">{props.queryObject.volume}</div>
+          <div className="row" id="row2">
+            <div className="coin-display__rank">Rank {props.queryObject.rank}</div>
+            <div className="coin-display__market-cap">Market Cap {props.queryObject.marketCap}</div>
+            <div className="coin-display__volume">24hr Volume {props.queryObject.volume}</div>
+          </div>
             <div className="coin-display__circulating-supply">{props.queryObject.circulatingSupply}</div>
             <div className="coin-display__total-supply">{props.queryObject.totalSupply}</div>
             <div className="coin-display__description">{props.queryObject.description}</div>
