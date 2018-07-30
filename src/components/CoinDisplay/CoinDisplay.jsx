@@ -6,6 +6,11 @@ const formatPrice = (str) => {
   return value;
 };
 
+const formatValue = (str) => {
+  let value = '$' + str.toLocaleString();
+  return value;
+}
+
 const formatSymbol = (str) => {
   let value = '(' + str + ')';
   return value;
@@ -36,9 +41,9 @@ const CoinDisplay = (props) => {
             <br />
             <br />
           <div className="row" id="row2">
-            <div className="coin-display__rank">Rank {props.queryObject.rank}</div>
-            <div className="coin-display__market-cap">Market Cap {props.queryObject.marketCap}</div>
-            <div className="coin-display__volume">24hr Volume {props.queryObject.volume}</div>
+            <div className="coin-display__rank">RANK {props.queryObject.rank}</div>
+            <div className="coin-display__market-cap">MARKET CAP {formatValue(props.queryObject.marketCap)}</div>
+            <div className="coin-display__volume">24HR VOLUME {formatValue(props.queryObject.volume)}</div>
           </div>
             <div className="coin-display__circulating-supply">{props.queryObject.circulatingSupply}</div>
             <div className="coin-display__total-supply">{props.queryObject.totalSupply}</div>

@@ -18,9 +18,11 @@
 }
 
 #row2 {
-  display: inline-block;
-  /* grid-template-columns: 1fr 1fr 1fr; */
+  display: flex;
   justify-content: space-around;
+  font-family: 'Montserrat' !important;
+  font-size: 13px;
+  font-weight: 700;
 
 }
 

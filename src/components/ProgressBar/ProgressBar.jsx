@@ -4,8 +4,11 @@ import progressBar from 'react-progress-bar.js';
 
 const ProgressBar = () => {
   let Circle = progressBar.Circle;
+
   const options = {
-    strokeWidth: 7.5
+    strokeWidth: 10,
+    easing: 'bounce',
+    duration: 1800
   };
 
   const containerStyle = {
