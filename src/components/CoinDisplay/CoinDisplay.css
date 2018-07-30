@@ -1,12 +1,15 @@
 .coin-display {
+  margin: auto;
+  max-width: 720px;
+  width: 100%;
   display: grid;
-  padding-top: 20px;
+  padding-top: 5rem;
 }
 
 /* TODO: better way to manipulate column values with fr unit? */
 #row1 {
   display: inline-grid;
-  grid-template-columns: .1fr 1fr
+  grid-template-columns: .11fr 1fr
 }
 
 #row1__1 {
@@ -16,10 +19,12 @@
 
 .coin-display__name {
   font-size: 32px;
+  align-self: center;
 }
 
 .coin-display__price {
   font-size: 32px;
+  align-self: center;
   justify-self: right;
 }
 
