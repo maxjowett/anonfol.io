@@ -13,6 +13,7 @@ const ProgressBar = (props) => {
   let circulatingSupply = props.queryObject.circulatingSupply;
   let totalSupply = props.queryObject.totalSupply;
   let supplyRatio = calculateSupplyRatio(circulatingSupply, totalSupply);
+  
   const options = {
     color: color,
     strokeWidth: 10,
