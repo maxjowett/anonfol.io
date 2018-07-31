@@ -1,13 +1,20 @@
 import React from 'react';
 import progressBar from 'react-progress-bar.js';
 
+const calculateSupplyRatio = (a, b) => {
+  let value = a / b;
+  value = value.toFixed(2);
+  return value;
+};
 
 const ProgressBar = (props) => {
   let Circle = progressBar.Circle;
-  let test = props.queryObject.color
-
+  let color = props.queryObject.color;
+  let circulatingSupply = props.queryObject.circulatingSupply;
+  let totalSupply = props.queryObject.totalSupply;
+  let supplyRatio = calculateSupplyRatio(circulatingSupply, totalSupply);
   const options = {
-    color: test,
+    color: color,
     strokeWidth: 10,
     easing: 'bounce',
     duration: 1800
@@ -20,7 +27,7 @@ const ProgressBar = (props) => {
 
   return (
     <Circle
-      progress='.87'
+      progress={supplyRatio}
       text={'87%'}
       options={options}
       initialAnimate={true}
