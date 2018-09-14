@@ -1,58 +1,18 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import SearchBar from './components/SearchBar/SearchBar';
-import CoinDisplay from './components/CoinDisplay/CoinDisplay';
-import ProgressBar from './components/ProgressBar/ProgressBar';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: '',
-      queryResponse: null,
-      queryObject: null
-    };
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
-    this.fetchCoinData = this.fetchCoinData.bind(this);
-  }
-
-  handleOnChange(event) {
-    this.setState({ query: event.target.value });
-  };
-
-  handleOnSubmit(event) {
-    event.preventDefault();
-    this.fetchCoinData(this.state.query);
-    event.target.reset();
-  };
-
-  fetchCoinData(str) {
-    let that = this;
-    fetch(`https://api.coinranking.com/v1/public/coins?symbols=${str}`)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      that.setState({ queryResponse: data });
-    })
-    .then(function() {
-      if (that.state.queryResponse.status == 'success' && that.state.queryResponse.data.coins.length > 0) {
-        that.setState({ queryObject: that.state.queryResponse.data.coins[0] })
-      }
-    })
-  };
-
   render() {
     return (
       <div className="App">
-        <SearchBar
-          handleOnChange={this.handleOnChange}
-          handleOnSubmit={this.handleOnSubmit}
-        />
-        <CoinDisplay
-          queryObject={this.state.queryObject}
-        />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
     );
   }
