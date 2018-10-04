@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar';
+import CoinDisplay from './components/CoinDisplay/CoinDisplay';
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
       return resp.json();
     })
     .then((res) => {
+      console.log(res)
       this.setState({ coins: res.data })
     })
   }
@@ -29,6 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
+        <CoinDisplay />
       </div>
     );
   }
