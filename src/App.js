@@ -1,37 +1,25 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import SearchBar from './components/SearchBar/SearchBar';
-import CoinDisplay from './components/CoinDisplay/CoinDisplay';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      coins: null
-    };
-    this.callAPI = this.callAPI.bind(this);
-  }
-
-  componentWillMount() {
-    this.callAPI()
-  }
-
-  callAPI() {
-    fetch(`https://api.coinranking.com/v1/public/coins`)
-    .then(function(resp) {
-      return resp.json();
-    })
-    .then((res) => {
-      console.log(res)
-      this.setState({ coins: res.data })
-    })
-  }
-
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <CoinDisplay />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
       </div>
     );
   }
