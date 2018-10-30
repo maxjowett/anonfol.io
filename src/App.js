@@ -26,7 +26,6 @@ class App extends Component {
       res.status === 'success' && that.setState({ coins: res, apiSuccess: true })
     });
   }
-
   
   render() {
     return (

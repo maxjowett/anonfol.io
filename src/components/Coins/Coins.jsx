@@ -10,7 +10,7 @@ class Coins extends Component {
           this.props.coins.data.coins.map(coin =>
             <div className="coin">
               <div className="coin__name">{coin.name}</div>
-              <div className="coin__price">{coin.price}</div>
+              <div className="coin__price">${parseFloat(coin.price).toFixed(2)}</div>
             </div>
           )
       }
