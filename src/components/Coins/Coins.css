@@ -1,0 +1,9 @@
+.coin {
+  display: flex;
+  max-width: 480px;
+  width: 100%;
+}
+
+.coin__price {
+  margin-left: auto
+}
