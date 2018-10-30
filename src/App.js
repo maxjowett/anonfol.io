@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import Coins from './components/Coins/Coins';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coins: null
+      coins: null,
+      apiSuccess: false
     }
     this.getCoins = this.getCoins.bind(this);
   }
@@ -21,7 +23,7 @@ class App extends Component {
       return response.json();
     })
     .then(function(res) {
-      res.status === 'success' && that.setState({ coins: res })
+      res.status === 'success' && that.setState({ coins: res, apiSuccess: true })
     });
   }
 
@@ -29,6 +31,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Coins
+          coins={this.state.coins}
+          apiSuccess={this.state.apiSuccess}
+        />
       </div>
     );
   }
