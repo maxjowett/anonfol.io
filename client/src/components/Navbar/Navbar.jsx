@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './Navbar.css';
+
 const Navbar = () => {
   return (
-    <div>
-      <h1>Navbar goes here!</h1>
+    <div className="navbar">
+      coindoma.in
     </div>
   );
 }
