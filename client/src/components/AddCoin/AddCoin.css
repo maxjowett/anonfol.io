@@ -1,17 +1,14 @@
 .add-coin {
-  /* display: inline; */
   margin: 0 auto;
   max-width: 960px;
 }
 
 .select {
-  float: left;
   margin-right: 16px;
   width: 240px;
 }
 
 #add-coin__input {
-  float: left;
   font-family: Inconsolata, Menlo, monospace;
   font-size: 16px;
   background-color: hsl(0,0%,100%);
