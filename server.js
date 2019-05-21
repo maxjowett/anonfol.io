@@ -11,7 +11,7 @@ app.get('/api/scrape', (req, res) => {
   let promises = [];
   const promiseBuilder = () => {
     let url = 'https://api.coinranking.com/v1/public/coins?offset='
-    if (offset < 50) {
+    if (offset < 250) {
       promises.push(axios.get(`${url}${offset}`));
       offset += 50;
       return promiseBuilder();
@@ -32,7 +32,8 @@ app.get('/api/scrape', (req, res) => {
           name,
           color,
           iconType,
-          iconUrl
+          iconUrl,
+          label: name
         }
       });
       const json = JSON.stringify(master, null, 2);
