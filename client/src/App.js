@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
+import Searchbar from './components/Searchbar/Searchbar';
 
 class App extends Component {
   // componentDidMount = () => {
@@ -17,6 +18,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Header />
+        <Searchbar />
       </div>
     );
   }
