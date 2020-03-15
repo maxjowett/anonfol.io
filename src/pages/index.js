@@ -1,9 +1,12 @@
 import React from 'react';
+import '../styles/index.scss';
+
+import Nav from '../components/nav.js';
 
 const Index = () => {
   return (
     <div>
-      <h1>Hello world!</h1>
+      <Nav />
     </div>
   );
 };
